@@ -1,21 +1,20 @@
 // your code here
 
 // let buttonEle=dcoument.getElementById("")
-let buttonEle=document.getElementById("button");
 
-buttonEle.addEventListener("click",()=>{
-	let nameInput=document.getElementById("name");
-let name=nameInput.value;
-let yearInput=document.getElementById("year");
-let year=yearInput.value;
 
-let displayUrl=document.getElementById("url");
-let urlText=displayUrl.textContent;
-	urlText.innerText=displayUrl+`${name} ${year}`;
+document.getElementById('urlForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-	
-})
-	
-	
+      // Get values from form
+      var nameValue = document.getElementById('name').value;
+      var yearValue = document.getElementById('year').value;
+
+      // Construct the query string
+      var queryString = '?name=' + encodeURIComponent(nameValue) + '&year=' + encodeURIComponent(yearValue);
+
+      // Update the h3 element with the new URL
+      document.getElementById('url').textContent = 'URL: https://localhost:8080/' + queryString;
+    });
 	
 	
