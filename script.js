@@ -10,7 +10,7 @@ let year=yearInput.value;
 
 let displayUrl=document.getElementById("url");
 let urlText=displayUrl.textContent;
-	urlText=displayUrl+`${name} & ${year}`;
+	urlText.textContent=displayUrl+`${name} ${year}`;
 
 	
 	
